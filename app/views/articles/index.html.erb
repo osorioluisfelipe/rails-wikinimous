@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>My Articles</h1>
+
+  <ul>
+    <% @articles.each do |article| %>
+      <li>
+        <%= link_to article.title, article_path(article) %>
+      </li>
+      <p>
+        <%= article.content %>
+      </p>
+    <% end %>
+  </ul>
+
+  <hr>
+
+  <%= link_to new_article_path do %>
+    <i class="fa fa-plus"></i> Add a new article
+  <% end %>
+</div>
